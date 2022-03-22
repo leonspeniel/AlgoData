@@ -7,15 +7,14 @@ import java.util.Queue;
 public class Main {
 
     public static void main(String[] args) {
-        var sq = new StackQueue();
-        sq.enqueue(10);
+        var sq = new PriorityQueue();
         sq.enqueue(20);
+        sq.enqueue(10);
         sq.enqueue(30);
-        sq.dequeue();
-        sq.dequeue();
-        var i = sq.dequeue();
+        sq.enqueue(15);
 
-        System.out.println(i);
+
+        System.out.println(sq.dequeue());
 
 
     }

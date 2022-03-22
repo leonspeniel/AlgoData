@@ -1,24 +1,28 @@
 package com.leons.part1;
 
+import java.util.Arrays;
+
 public class PriorityQueue {
     private int[] array = new int[5];
     private int count=0;
 
     public void enqueue(int item){
         if(isFull()) throw new IllegalStateException();
-        if(isEmpty()){
-            array[0]=item;
-            return;
-        }
-
-        for (int i=count;i<0;i--){
-            if(array[i-1]>item)
-                array[i]=array[i-1];
-            else{
-                array[i+1]=item;
+        int i;
+        for ( i = count-1; i >= 0; i--) {
+            if (array[i] > item)
+                array[i+1] = array[i];
+            else {
                 break;
             }
         }
+        array[i+1] = item;
+        count++;
+    }
+
+    public int dequeue(){
+        if(isEmpty()) throw new IllegalStateException();
+        return array[--count];
     }
 
     private boolean isEmpty() {
@@ -29,4 +33,10 @@ public class PriorityQueue {
         return count==array.length;
     }
 
+    @Override
+    public String toString() {
+        return "PriorityQueue{" +
+                "array=" + Arrays.toString(array) +
+                '}';
+    }
 }
