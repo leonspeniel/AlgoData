@@ -1,21 +1,22 @@
 package com.leons.part1;
 
 
+import java.util.ArrayDeque;
+import java.util.Queue;
+
 public class Main {
 
     public static void main(String[] args) {
-        var arrQ = new ArrayQueue(5);
-        arrQ.enqueue(10);
-        arrQ.enqueue(20);
-        arrQ.enqueue(30);
-        arrQ.dequeue();
-        arrQ.enqueue(40);
-        arrQ.dequeue();
-        arrQ.enqueue(50);
-        System.out.println(arrQ);
-        arrQ.enqueue(60);
-        System.out.println(arrQ);
-        arrQ.enqueue(70);
+        var sq = new StackQueue();
+        sq.enqueue(10);
+        sq.enqueue(20);
+        sq.enqueue(30);
+        sq.dequeue();
+        sq.dequeue();
+        var i = sq.dequeue();
+
+        System.out.println(i);
+
 
     }
 }
