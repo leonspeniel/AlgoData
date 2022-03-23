@@ -1,8 +1,6 @@
 package com.leons.part1;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
 import java.util.Stack;
 
 public class OtherFunctions {
@@ -57,5 +55,34 @@ public class OtherFunctions {
             queue.add(stack.pop());
 
         return queue;
+    }
+
+    //my imp1
+    /*public static char firstNonRepeatChar(String msg){
+        var map = new HashMap<Character,Integer>();
+        var value =msg.replace(" ","");
+        var valArray = value.toCharArray();
+        for(int i=0;i<valArray.length;i++){
+            map.put(valArray[i],i);
+        }
+        System.out.println(map);
+        var min = Collections.min(map.values());
+        return valArray[min];
+    }*/
+
+    //with mosh
+    public static char firstNonRepeatChar(String msg){
+        var map = new HashMap<Character,Integer>();
+        var valArray = msg.toCharArray();
+        for(char ch:valArray){
+            int val= map.getOrDefault(ch, 0);
+            map.put(ch,val+1);
+        }
+        System.out.println(map);
+        for (char c : valArray)
+            if (map.get(c) == 1)
+                return c;
+
+        return Character.MIN_VALUE;
     }
 }
