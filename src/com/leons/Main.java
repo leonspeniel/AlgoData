@@ -1,5 +1,7 @@
-package com.leons.part1;
+package com.leons;
 
+
+import com.leons.part1.HashTable;
 
 import java.util.ArrayList;
 
