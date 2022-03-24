@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.Stack;
 
 public class OtherFunctions {
+
     public String reverseString(String input) {
         if (input == null) throw new IllegalArgumentException();
         var stackString  = new Stack<Character>();
@@ -83,6 +84,16 @@ public class OtherFunctions {
             if (map.get(c) == 1)
                 return c;
 
+        return Character.MIN_VALUE;
+    }
+
+    public static char findFirstRepeatedChar(String msg){
+        var set = new HashSet<Character>();
+        for(char ch : msg.toCharArray()){
+            if(set.contains(ch))
+                return ch;
+            set.add(ch);
+        }
         return Character.MIN_VALUE;
     }
 }

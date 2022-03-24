@@ -2,7 +2,7 @@ package com.leons.part1;
 
 import java.util.NoSuchElementException;
 
-public class LinkedList {
+public class MyLinkedList {
 
     private class Node {
         private Node(int value) {
