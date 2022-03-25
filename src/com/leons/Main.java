@@ -2,6 +2,7 @@ package com.leons;
 
 
 import com.leons.part1.HashTable;
+import com.leons.part2.MyTree;
 
 import java.util.ArrayList;
 
@@ -9,12 +10,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        HashTable ht = new HashTable();
-        ht.put(3,"hello");
-        ht.put(4,"world");
-        ht.put(8,"img");
+        var mtree = new MyTree();
+        mtree.insert(7);
+        mtree.insert(4);
+        mtree.insert(1);
+        mtree.insert(6);
+        mtree.insert(9);
+        mtree.insert(8);
+        mtree.insert(10);
 
-        System.out.println(ht.get(8));
+        System.out.println(mtree.find(11));
 
     }
 
